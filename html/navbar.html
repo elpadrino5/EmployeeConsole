@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel='stylesheet' href='css/style.css'>
+        <!-- <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css'>  
+        <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js'></script> -->
+        <link rel="stylesheet" href="resources/bootstrap/css/bootstrap.min.css">      
+        <script src="resources/bootstrap/js/bootstrap.min.js"></script>
+        <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>       
+        <script src='js/script.js'></script>
+        <link rel="icon" href="image/ec.jpg">
+        <title>Employee Console - Home</title>
+    </head>
+    
+    <body>
+        <nav class='navbar navbar-default'>
+            <div id='nav_container' class='container-fluid'>
+                <div class='navbar-header'>
+                    <div>
+                        <!-- onmouseover="TitleAnimation()"  onmouseout="TitleAnimationReset()" -->
+                        <p id='navbar-title'>Employee Console</p>
+                    </div> 
+                </div>
+                <div id='links_container'>
+                    <ul class='nav navbar-nav' id='links'>
+                        <li class='active'><a href='index.php' id='navbar-home' title='Home' onclick="ClearSearchBar()"><span class="glyphicon glyphicon-home" id="home_icon" alt="home"></span></a></li>
+                    </ul>
+                </div>
+                    <div>              
+                        <form class='navbar-form navbar-left' name='search' id='search' method='GET' onsubmit="SetSessionVar()">
+                            <div class='input-group'>
+                                <div class='input-group-btn'>                                    
+                                    <button class='btn btn-warning' type='submit' id='searchbtn' name='searchbtn' title='Search'>
+                                        <span class='glyphicon glyphicon-search'></span>
+                                    </button>
+                                    <input type='hidden' name='search_action' value='search'/>
+                                </div>
+                                
+                                <?php
+                                    if (isset($_SESSION['search_str'])) 
+                                        {
+                                            $str = $_SESSION['search_str'];
+                                            echo "<input type='text'   id='searchTextBox' name='textfield' oninput='AutoSearch(this.value)'
+                                            placeholder='Search for user, title, department, phone number, etc.' value=\"$str\" >";
+                                            //echo "wah";
+                                        }
+                                    else 
+                                        {
+                                            echo "<input type='text' id='searchTextBox' name='textfield' oninput='AutoSearch(this.value)'
+                                            placeholder='Search for user, title, department, phone number, etc.'>";
+                                        }
+                                ?>                                
+                                <button type="button" id='clear_btn' onclick="ClearSearchBar()" title='Clear'><span class='glyphicon glyphicon-remove' id='clear_icon'></span></button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div id="welcome_message_container">
+                        <div id="welcome_message" onclick="ShowPopup()">
+                            <p>
+                                <?php
+                                    if (isset($_SESSION["firstName"])) 
+                                        {echo "Hello " . $_SESSION["firstName"] . "!";}
+                                    else 
+                                        {echo "Please Login";}
+                                ?>
+                                <span class='glyphicon glyphicon-user'></span>
+                            </p>
+                        </div> 
+                    </div> 
+            </div>  
+        </nav>
+
+        
+        <div class="popup" id="popup_container">
+
+            <a id="signout" href='logon.php'>
+                <div id='signout_container'>
+                    <span id="login_popup"><span class="glyphicon glyphicon-log-out"></span> Sign Out</span>
+                </div>                
+            </a>
+        </div>
+
+
+        

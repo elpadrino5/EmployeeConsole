@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="css/style.css">
+        <title>Admin Console - Edit</title>
+    </head>
+    <body class="editbody" id="editform_body">
+        <div class="container" id="edit_container">
+             <!-- <?php         
+              $filename = 'UserInfo.csv';
+                require_once 'data_functions.php';       
+                //map the row to variables
+                $AccountName   = $line[0];
+                $Name          = $line[1];
+                $Title         = $line[2];
+                $Department    = $line[3];
+                $Company       = $line[4];
+                $EmailAddress  = $line[5];
+                $OfficePhone   = $line[6];
+                $Mobile        = $line[7];
+                $MgrAcntName   = $line[8];
+                $Manager       = $line[9];
+                $Office        = $line[10];
+                $StreetAddress = $line[11];
+                $PostalCode    = $line[12];
+                $Active        = $line[13];
+                $LastUpdate    = $line[14];
+                $LastEditedBy  = $line[15]; 
+            ?>  -->
+            <form method="post" name="editform">
+                <fieldset class="fs1">
+                    <legend>Employee Information</legend> 					
+                    <table id='editTable'>
+                        <tr>
+                            <td><label for="accountName">Username</label></td>
+                            <td>
+                                <input type="text" id="accountName" name="accountName" class="editInfo" value="<?php echo $user;?>"
+                                oninput="ValidateInput(name, this.value, 'anerror')" onfocusout="ChangeHighlight(name)" readonly>
+                                <span id='anerror' class='error'><?php echo $anerror;?></span><br>
+                            </td>
+                        </tr>
+                        
+                        <tr>			
+                            <td><label for="name">Full Name</label></td>
+                            <td>
+                                <input type="text" id="name" name="name" class="editInfo" value="<?php echo $Name;?>" 
+                                oninput="ValidateInput(name, this.value, 'nerror')" onfocusout="ChangeHighlight(name)" required>
+                                <span id='nerror' class='error'><?php echo $nerror;?></span><br>
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <td><label for="title">Title</label></td>
+                            <td>
+                                <input type="text" id="title" name="title" class="editInfo" value="<?php echo $Title;?>"
+                                oninput="ValidateInput(name, this.value, 'terror')" onfocusout="ChangeHighlight(name)" required>
+                                <span id='terror' class='error'><?php echo $terror;?></span><br>
+                            </td>
+                        </tr>  
+                        
+                        <tr>			  
+                            <td><label for="department">Department</label></td>
+                            <td>
+                                <select type="text" id="department" name="department" class="editInfo_select"
+                                oninput="ValidateInput(name, this.value, 'derror')" onfocusout="ChangeHighlight(name)">
+                                    <option value="<?php echo $Department;?>" id="department_option" selected><?php echo $Department;?></option>
+                                    <?php    
+                                        global $filename;
+                                        $table = GetInfo($filename);                                                                
+                                        $depArr = array();
+                                        $i = 0;
+                                        foreach ($table as $line)
+                                        {
+                                            $dep = $line[3];
+                                            $dep = trim($dep);
+                                        
+                                            if (($i > 0) && ($dep !== null && $dep !== '') && ($dep !== $Department))
+                                            {
+                                                $depArr[] = $dep;
+                                            }
+                                            $i++;
+                                        }
+                                        $depArr = array_unique($depArr);
+                                        asort($depArr, SORT_STRING | SORT_FLAG_CASE | SORT_NATURAL);
+
+                                        foreach ($depArr as $item)
+                                        {
+                                            echo "<option value='$item'>$item</option>";
+                                        }
+                                    ?>                                    													
+                                </select><span id='derror' class='error'><?php echo $derror;?><br>
+                            </td>
+                        </tr>
+                        
+                        <tr>							
+                            <td><label for="company">Company</label></td>
+                            <td>
+                                <select type="text" id="company" name="company" class="editInfo_select" 
+                                oninput="ValidateInput(name, this.value, 'cerror')" onfocusout="ChangeHighlight(name)">
+                                    <option value="<?php echo $Company;?>" id="company_option" selected><?php echo $Company;?></option>
+                                    <?php
+                                        $companyArr = array();
+                                        $i = 0;
+                                        foreach ($table as $line)
+                                        {
+                                            $company = $line[4];
+                                            $company = trim($company);
+                                        
+                                            if (($i > 0) && ($company !== null && $company !== '') && ($company !== $Company) )
+                                            {
+                                                $companyArr[] = $company;
+                                            }
+                                            $i++;
+                                        }
+                                        $companyArr = array_unique($companyArr);
+                                        asort($companyArr, SORT_STRING | SORT_FLAG_CASE | SORT_NATURAL);
+                                        foreach ($companyArr as $item)
+                                        {
+                                            echo "<option value='$item'>$item</option>";
+                                        }
+                                    ?>
+                                </select><span id='cerror' class='error'><?php echo $cerror;?><br>
+                            </td>								
+                        </tr>				
+                        
+                        <tr>
+                            <td><label for="emailAddress">Email Address</label></td>
+                            <td>
+                                <input type="text" id="emailAddress" name="emailAddress" class="editInfo" value="<?php echo $EmailAddress;?>" 
+                                oninput="ValidateInput(name, this.value, 'eaerror')" onfocusout="ChangeHighlight(name)" readonly>
+                                <span id='eaerror' class='error'><?php echo $eaerror;?> <br>
+                            </td>
+                        </tr>	
+
+                        <tr>
+                            <td><label for="officePhone">Office Phone</label></td>
+                            <td>
+                                <input type="text" id="officePhone" name="officePhone" class="editInfo" value="<?php echo $OfficePhone;?>"
+                                oninput="ValidateInput(name, this.value, 'operror')" onfocusout="ChangeHighlight(name)">
+                                <span id='operror' class='error'><?php echo $operror;?></span><br>
+                            </td>
+                        </tr>		
+
+                        <tr>
+                            <td><label for="mobile">Mobile</label></td>
+                            <td>
+                                <input type="text" id="mobile" name="mobile" class="editInfo" value="<?php echo $Mobile;?>"
+                                oninput="ValidateInput(name, this.value, 'merror')" onfocusout="ChangeHighlight(name)">
+                                <span id='merror' class='error'><?php echo $merror;?></span><br>
+                            </td>
+                        </tr>		
+
+                        <tr>
+                            <td><label for="mgrAcntName">Manager Username</label></td>
+                            <td>
+                                <select type="text" id="mgrAcntName" name="mgrAcntName" class="editInfo_select" 
+                                onchange="AutoPopulate(name, 'manager')" oninput="ValidateInput(name, this.value, 'manerror')" onfocusout="ChangeHighlight(name)">
+                                    <option value="<?php echo $MgrAcntName;?>" id="mgrAcntName_option" selected><?php echo $MgrAcntName;?></option>	
+                                    <?php
+                                        $mgranArr = array();
+                                        $i = 0;
+                                        foreach ($table as $line)
+                                        {
+                                            $mgran = $line[0];
+                                            $mgran = trim($mgran);
+                                            //$mgran = strtolower($mgran);
+                                        
+                                            if (($i > 0) && ($mgran !== null && $mgran !== '') && ($mgran !== $MgrAcntName))
+                                            {
+                                                $mgranArr[] = $mgran;
+                                            }
+                                            $i++;
+                                        }
+                                        //add notapplicable as an option for manager account name if it's not already selected
+                                        if ($MgrAcntName !== "notapplicable") {$mgranArr[] = "notapplicable";}
+
+                                        $mgranArr = array_unique($mgranArr);
+                                        asort($mgranArr, SORT_STRING | SORT_FLAG_CASE | SORT_NATURAL);
+                                        foreach ($mgranArr as $item)
+                                        {
+                                            echo "<option value='$item'>$item</option>";
+                                        }
+                                    ?>
+                                </select><span id='manerror' class='error'><?php echo $manerror;?><br>
+                            </td>	
+                        </tr>		
+
+                        <tr>
+                            <td><label for="manager">Manager</label></td>
+                            <td>
+                                <input type="text" id="manager" name="manager" class="editInfo" value="<?php echo $Manager;?>"
+                                oninput="ValidateInput(name, this.value, 'maerror')" onfocusout="ChangeHighlight(name)" readonly>
+                                <span id='maerror' class='error'><?php echo $maerror;?><br>                                
+                            </td>
+                        </tr>		
+
+                        <tr>
+                            <td><label for="office">Office</label></td>
+                            <td>
+                                <select type="text" id="office" name="office" class="editInfo_select" 
+                                oninput="ValidateInput(name, this.value, 'oerror')" onfocusout="ChangeHighlight(name)">
+                                    <option value="<?php echo $Office;?>" id="office_option" selected><?php echo $Office;?></option>
+                                    <?php                                                                    
+                                    $officeArr = array();
+                                    $i = 0;
+                                    foreach ($table as $line)
+                                    {
+                                        $off = $line[10];
+                                        $off = trim($off);
+                                    
+                                        if (($i > 0) && ($off !== null && $off !== '') && ($off !== $Office))
+                                        {
+                                            $officeArr[] = $off;
+                                        }
+                                        $i++;
+                                    }
+                                    $officeArr = array_unique($officeArr);                                    
+                                    asort($officeArr, SORT_STRING | SORT_FLAG_CASE | SORT_NATURAL);
+
+                                    foreach ($officeArr as $item)
+                                    {
+                                        echo "<option value='$item'>$item</option>";
+                                    }
+                                    ?>
+                                </select><span id='oerror' class='error'><?php echo $oerror;?><br>
+                            </td>	
+                        </tr>		
+
+                        <tr>
+                            <td><label for="streetAddress">Street Address</label></td>
+                            <td>
+                                <select type="text" id="streetAddress" name="streetAddress" class="editInfo_select" 
+                                oninput="ValidateInput(name, this.value, 'saerror')" onfocusout="ChangeHighlight(name)">
+                                    <option value="<?php echo $StreetAddress;?>" id="streetAddress_option" selected><?php echo $StreetAddress;?></option>
+                                    <?php                                                                    
+                                    $straddArr = array();
+                                    $i = 0;
+                                    foreach ($table as $line)
+                                    {
+                                        $sa = $line[11];
+                                        $sa = trim($sa);
+                                    
+                                        if (($i > 0) && ($sa !== null && $sa !== '') && ($sa !== $StreetAddress))
+                                        {
+                                            $straddArr[] = $sa;
+                                        }
+                                        $i++;
+                                    }
+                                    $straddArr = array_unique($straddArr);
+                                    asort($straddArr, SORT_STRING | SORT_FLAG_CASE | SORT_NATURAL);
+
+                                    foreach ($straddArr as $item)
+                                    {
+                                        echo "<option value='$item'>$item</option>";
+                                    }
+                                    ?>
+                                </select><span id='saerror' class='error'><?php echo $saerror;?><br>
+                            </td>
+                        </tr>		
+
+                        <tr>
+                            <td><label for="postalCode">Postal Code</label></td>
+                            <td>
+                                <select type="text" id="postalCode" name="postalCode" class="editInfo_select"
+                                oninput="ValidateInput(name, this.value, 'pcerror')" onfocusout="ChangeHighlight(name)">
+                                    <option value="<?php echo $PostalCode;?>" id="postalCode_option" selected><?php echo $PostalCode;?></option>
+                                <?php                                                                    
+                                $pcArr = array();
+                                $i = 0;
+                                foreach ($table as $line)
+                                {
+                                    $pc = $line[12];
+                                    $pc = trim($pc);
+                                
+                                    if (($i > 0) && ($pc !== null && $pc !== '') && ($pc !== $PostalCode))
+                                    {
+                                        $pcArr[] = $pc;
+                                    }
+                                    $i++;
+                                }
+                                $pcArr = array_unique($pcArr);
+                                asort($pcArr, SORT_STRING | SORT_FLAG_CASE | SORT_NATURAL);
+
+                                foreach ($pcArr as $item)
+                                {
+                                    echo "<option value='$item'>$item</option>";
+                                }
+                                ?>
+                                </select><span id='pcerror' class='error'><?php echo $pcerror;?><br>
+                            </td>
+                        </tr>		
+                                        
+                        <tr>
+                            <td><label for="active">Active</label></td>
+                            <td>
+                                <select type="text" id="active" name="active" class="editInfo_select" 
+                                oninput="ValidateInput(name, this.value, 'aerror')" onfocusout="ChangeHighlight(name)">
+                                    <option value="<?php echo $Active;?>" id="active_option" selected><?php echo $Active;?></option>
+                                    <?php  
+                                        if ($Active === "Yes")
+                                        {
+                                            echo "<option value='No'>No</option>";
+                                        }
+                                        else if ($Active === "No")
+                                        {
+                                            echo "<option value='Yes'>Yes</option>";
+                                        }
+                                        else
+                                        {
+                                            echo "<option value='Yes'>Yes</option>";
+                                            echo "<option value='No'>No</option>";
+                                        }   
+                                    ?>                                   
+                                </select><span id='aerror' class='error'><?php echo $aerror;?><br>
+                            </td>	
+                        </tr>
+                            
+                        <tr>
+                            <td><label for="lastUpdate">Last Update</label></td>
+                            <td>
+                                <input type="text" id="lastUpdate" name="lastUpdate" class="editInfo" value="<?php echo $LastUpdate;?>" readonly>
+                                <span id='luerror' class='error'><?php echo $luerror;?><br>
+                            </td>
+                        </tr>
+                            
+                        <tr>
+                            <td><label for="lastEditedBy">Last Edited By</label></td>
+                            <td>
+                                <input type="text" id="lastEditedBy" name="lastEditedBy" class="editInfo" value="<?php echo $LastEditedBy;?>" readonly>
+                                <span id='leberror' class='error'><?php echo $leberror;?><br>
+                            </td> 
+                        </tr>									  
+                    </table>
+                    <br>	
+                    <button type='submit' id='save'>Update</button>
+                    <input type="hidden" name="action" value="edit"/>
+                    <button type='button' id='cancel' onclick="ResetInfo()">Reset</button>
+                    <a href='#' onclick="GetSessionVar()"  id='go_back' >Go to HOME</a>
+                </fieldset>
+            </form>
+            </div>
+    </body>
+</html>
