@@ -1,0 +1,756 @@
+/* logon page -----------------------------------------------------------------------------------------------------------------------------*/
+#super_container
+{ 
+    padding-top: 10px;
+    border: 0px solid blue;
+    display: block;
+}
+
+#luna_logo_container
+{
+    margin-left: 1px;
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+#title_container
+{
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+#login_message_container
+{
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    width: 320px;
+    height: 50px;
+    background-color: rgba(235, 77, 77, 0.39);
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+#form_container
+{
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.logon_container{
+    width: 320px;
+    height: 60px;
+    border: 1px solid gray;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5px;
+ }
+
+#btn_container
+{
+    padding-top: 20px;
+}
+
+#login_message
+{
+    text-align: center;
+}
+
+#logon_btn
+{
+    height: 50px;
+    width: 320px;
+    border-radius: 30px;
+    color:white;
+    background-color: rgba(23, 153, 153, 0.719);
+    font-weight: bold;
+    font-size: large;
+    border: 0px solid black;
+    pointer-events: none;
+}
+
+#logon_header
+{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size:2em;
+}
+
+ #usename_table, td, tr
+ {
+    border: 0px solid yellow;
+ }
+
+ .label_row
+ {
+    visibility: collapse;
+ }
+
+.logon_input
+{
+    width: 280px;
+    height: 56px;
+    font-size: medium;
+    padding-left: 5px;
+    padding-top: 8px;
+    margin: 0px;
+    border: hidden;
+}
+
+#username_input:focus
+{
+    border: hidden;
+    outline: none;
+}
+
+#password_input:focus
+{
+    border: hidden;
+    outline: none;
+}
+
+.logon_input:focus::placeholder
+{
+    font-size: 0%;
+}
+
+.logon_table
+{
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5%;
+}
+
+.logon_label
+{
+    color: rgb(23, 153, 153);
+    visibility: hidden;
+    font-size: small;
+    font-weight: normal;
+    padding-left: 5px;
+}
+
+/* navigation bar -------------------------------------------------------------------------------------------------------------------------*/
+
+nav.navbar {
+    /*position: fixed;*/
+    background-color: rgb(0, 113, 128);    
+    margin-bottom: 0px;
+}
+
+.navbar-header{
+    margin-left: 0px;
+    display: block;
+    border: 0px solid white;
+    height: 50px;
+    width:auto;
+    padding-right: 15px;
+}
+
+#navbar-title{
+    color:white;
+    margin-top: 11.5px;
+    font-size: larger;
+}
+#navbar-title:hover{
+    cursor: default;
+}
+
+#navbar-home{
+    background-color:goldenrod;
+    color:rgb(53, 53, 53);
+    width: 70px;
+    padding: 10.5px;
+    padding-left: 22px;
+    align-items: center;
+    margin-right: 200px;
+}
+
+#home_icon{
+    font-size: 25px;
+    font-weight: bolder;        
+}
+
+#navbar-home:hover{
+    background-color:goldenrod;
+    color:lightgray;
+}
+
+#navbar-ul{
+    color:white;
+}
+
+/*links*/
+#intranet{
+    color: lightgray;
+}
+#intranet:hover{
+    color:black;
+}
+
+#directory{
+    color:lightgray;
+}
+#directory:hover{
+    color:black;
+}
+
+#itresources{
+    color:lightgray;
+}
+#itresources:hover{
+    color:black;
+}
+
+/*search bar and button*/
+#search{
+    display: inline;
+}
+
+ #searchbtn {
+    background-color:goldenrod;
+    border-top-left-radius: 10%;
+    border-bottom-left-radius: 10%;
+    border: 0px inset lightgray;
+    border-right: 0px solid black;
+    height: 34px;
+    float: left;
+ }
+
+ #clear_icon{
+    font-size: small;
+    font-weight: lighter;
+    color: gray;
+    border: 0px solid blue;  
+    width: 35px;
+    height: 30px;
+    margin-bottom: -20px;
+    padding-top: 6px;
+ }
+ #clear_icon:hover{
+    color: rgb(70, 70, 70);
+ }
+
+ #clear_btn{
+    border: 0px solid black;    
+    background-color: transparent;
+    position: relative;
+    width: 35px;
+    height: 30px;
+    padding: 0px;
+ }
+
+ #clear_btn:hover{
+     color: rgb(53, 53, 53);
+ }
+
+ #searchTextBox {
+    width: 500px;
+    height: 34px;
+    border: 2px inset lightgray;
+    z-index: 0;
+    padding-left: 15px;
+    margin-right: -40px;
+ }
+
+ #searchTextBox:focus {
+    border: 2px solid goldenrod;
+    outline: none;
+    box-shadow: none; 
+}
+
+#welcome_message
+{
+    color: rgb(208, 255, 237);
+    margin-top: 2px;
+    padding: 12px 10px 2px 10px;
+    text-align: center;
+    border: 0px solid blue;
+    border-radius: 6px;
+}
+
+#welcome_message_container
+{
+    border: 0px solid red;
+    float: right;
+}
+
+#welcome_message:hover
+{
+    border: 1px solid rgba(208, 255, 237, 0.493);
+    cursor: pointer;
+}
+
+/*login popup*/
+
+#popup_container{
+    visibility: hidden;
+    width: 100px;
+    height: 37px;
+    background-color: white;
+    color: black;
+    text-align: center;
+    border-radius: 6px;
+    box-shadow: 0px 0px 3px 1px gray;
+    padding: 0px;
+    position: relative;
+    display: block;
+    float: right;
+    z-index: 2;
+    margin-right: 1%;
+    bottom: 0%;
+    /* left: 92.2%; */
+    margin-left: 90%;
+}
+
+/* Popup arrow */
+#popup_container::after {
+    content: "";
+    position: relative;
+    bottom: 59px;
+    right: 0px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent  rgb(255, 255, 255) transparent ;
+}
+
+#signout_container{
+    width: 92px;
+    height: 28px;
+    padding: 4px 5px;
+    border-radius: 6px;
+    margin: 4px 4px;
+    color: black;
+}
+
+#signout_container:hover{
+    width: 92px;
+    height: 28px;
+    padding: 4px 2px;
+    border-radius: 6px;
+    background-color: lightgray;
+    margin: 4px 3px;
+    text-decoration: none;
+}
+
+#signout:hover{
+    text-decoration: none;
+}
+
+/* menu button */
+#menu-btn{
+align-self: center;
+background-color: transparent;
+width: 40px;
+height: 35px;
+border: 1px solid transparent;
+border-radius: 5%;
+margin-left:395px;
+margin-top:7px;
+}
+#menu-btn:hover{
+    background-color: rgb(23, 153, 153);
+}
+
+.icon-bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px 0px;
+    padding-right: 0px;
+    border-radius: 15%;
+}
+
+.csvbtn  {
+    float: left;
+    width: 110px;
+    height: 35px;
+    background-color: white;
+    color: gray;
+    border:0px solid rgb(18, 47, 85);    
+    text-align: center;
+    padding-left: 0px;
+    border-radius: 6px;
+    position: relative;
+}  
+
+.csvbtn:hover  {
+    border: 1px inset whitesmoke;
+    color: rgb(18, 47, 85);
+}
+
+#validate_btn:focus
+{
+    background-color: whitesmoke;
+}
+
+.csv_container{
+    display: table;
+    float: right;
+    margin-right: 5%;
+    width: 400px;
+    height: auto;
+    border: 0px solid black;
+    display: block;
+}
+
+#buttons_table{
+    width: 100%;
+}
+
+/*Upload functionality*/
+#upload_message{
+    margin-right: 38px;
+}
+
+#browse {
+    float: right;
+    display: flex;
+    flex-direction: row;
+}
+
+#message_container {
+    float: right;
+}
+
+#confirm_upload{
+    height: 30px;
+    width: 60px;
+}
+
+#rm_file{
+    background-color: whitesmoke;
+    border: 0px;
+    color: black;
+}
+
+#rm_file:hover{
+    color: red;
+}
+
+/* main page ----------------------------------------------------------------------------------------------------------------------------*/
+
+#clear-changes-button{
+    width: 110px;
+    height: 35px;
+    border: 1px outset lightgray;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    margin-left: 5%;
+}
+
+#clear-apply-button{
+    width: 110px;
+    height: 35px;
+    border: 1px outset lightgray;
+    border-radius: 6px;
+    margin-bottom: 20px;
+}
+
+#clear-changes-button:hover{
+    border: 1px inset lightgray;
+}
+
+#changes-msg-container{
+    line-height: .6;
+    margin-bottom: 20px;    
+}
+
+#changes{
+    margin-left: 5%;
+}
+
+#apply-msg-container{
+    margin-bottom: 20px;
+    margin-left: 5%;
+}
+
+#changes-button{
+    margin-left: 5%;
+    width: 110px;
+    height: 35px;
+    margin-left: 1%;
+    border: 1px outset lightgray;
+    border-radius: 6px;
+    font-size: bold;    
+}
+
+#changes-button:hover{
+    border: 1px inset lightgray;
+}
+
+#apply-button{
+    cursor: default;
+    width: 110px;
+    height: 35px;
+    float:left;
+    margin-left: 5%;
+    color: rgb(109, 109, 109);
+    background-color: rgb(226, 226, 226);
+    border: 0px solid lightgray;
+    border-radius: 6px;
+    font-size: bold;    
+}
+#apply-button:hover{
+    border: 0px solid lightgray;
+}
+
+#apply-button-ready{
+    font-size: bold;
+    width: 110px;
+    height: 35px;
+    float:left;
+    margin-left: 5%;
+    color: white;
+    background-color: goldenrod;
+    border: 1px outset lightgray;
+    border-radius: 6px;
+}
+#apply-button-ready:hover{
+    border: 1px inset lightgray;
+}
+
+#apply-message{
+    visibility: hidden;
+    color:black;
+    float:left;
+    margin-left: 1%;
+}
+
+#apply-message-ready{
+    color: goldenrod;
+    float:left;
+    margin-left: 1%;
+}
+
+#pagebody{
+    display: block;
+}
+.bodytext{
+    display: block;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+#mainTable {
+    margin-top: 1em;
+    margin-left: 5%;
+    margin-right: 5%;
+    width: 90%;
+    font-size: small;
+    box-shadow: 3px 3px 3px 0px gray;
+    border-radius: 6px;
+}
+
+#mainTable td {
+    padding: 0px 0px 0px 8px;
+    margin: 0;
+    line-height: normal;
+}
+
+#mainTable th{    
+    padding: 2px 8px 2px;
+    height: 35px;
+    font-weight: bolder;
+    color: white;
+    background-color: rgb(18, 47, 85);
+}
+
+.table_header{
+    border-right: 1px solid rgb(83, 111, 148);
+}
+
+#active_header{
+    border-top-right-radius: 3px;
+}
+#username_header{
+    border-top-left-radius: 3px;
+}
+
+#mainTable tr{
+    background-color: rgba(193, 224, 217, 0.781);
+    height: 10px;
+    padding: 1px red;
+    margin: 1px blue;
+}
+
+#mainTable tr:hover{
+    /* background-color: rgb(228, 197, 119); */
+    background-color: rgb(91, 167, 163);
+}
+
+#mainTable tr:nth-child(even){
+    /*background-color: rgb(240, 221, 174);*/
+    background-color: rgba(126, 180, 173, 0.747);
+}
+
+#mainTable tr:nth-child(even):hover{
+    /*background-color: rgb(228, 197, 119);*/
+    background-color: rgb(91, 167, 163);
+}
+
+select {
+    width: 100%;
+    padding-left: 11px;
+}
+
+.table_cell {
+    width: 100%;
+    background: none!important;
+    border: none;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    text-align: left;
+}
+
+.table_cell:hover {
+    text-decoration: underline;
+}
+/* edit page ---------------------------------------------------------------------------------------------------------------------------- */
+
+#go_back
+{
+    font-size: medium;
+    font-weight: normal;
+    color: teal;
+    padding-left: 20px;
+}
+
+#edit_container
+{
+    margin-top: 25px;
+}
+
+#editTable th, #editTable td{
+    padding: 2px 8px 2px;
+}
+
+fieldset {
+    background-color:whitesmoke;
+    border: 2px groove lightgrey !important;
+    padding: 0 1.4em 2em !important;
+    margin: 0 0 1.5em 0 !important;
+    -webkit-box-shadow:  0px 0px 0px 0px #000;
+            box-shadow:  0px 0px 0px 0px #000;
+}
+
+legend {
+    font-size: 1.2em !important;
+    font-weight: bold !important;
+    text-align: left !important;
+    width: inherit; 
+    border-bottom: none;
+}
+
+body {
+    background-color: white;
+    font-weight: normal;
+    font-family: Cambria;
+}
+
+.editInfo
+{
+    padding-left: 15px;
+    width: 500px;
+    height: 25px;
+    border: 1px solid gray;
+    border-radius: 4px;
+}
+
+.editInfo_select
+{
+    padding-left: 11px;
+    width: 500px;
+    height: 25px;
+    outline: none;
+    /*border-radius: 4px;
+    background-color: rgb(216, 216, 216); */
+}
+
+.editInfo_select:focus{
+    border: 2px solid rgb(23, 153, 153);
+    outline: whitesmoke solid 1px;
+    box-shadow: none; 
+}
+
+#accountName{
+    background-color: rgb(219, 240, 235);
+    cursor: default;
+}
+#emailAddress{
+    background-color: rgb(219, 240, 235);
+    cursor: default;
+}
+#manager{
+    background-color: rgb(219, 240, 235);
+    cursor: default;
+}
+#lastUpdate{
+    background-color: rgb(219, 240, 235);
+    cursor: default;
+}
+#lastEditedBy{
+    background-color: rgb(219, 240, 235);
+    cursor: default;
+}
+
+label
+{
+    font-weight: bold;
+    color:rgb(73, 73, 73);
+}
+
+#save {
+    margin-left: 1.5em;
+    font-weight: bolder;
+    width: 150px;
+    height: 40px;
+    background-color:rgba(218, 165, 32, 0.863);
+    border-radius: 12px;
+    border: 2px outset lightgray;
+    color: whitesmoke;
+}
+
+#save:hover{
+    background-color:goldenrod;
+    color: white;
+    border: 2px outset black;
+}
+
+ #cancel {
+    margin-left: 1.5em;
+    font-weight: bolder;
+    width: 150px;
+    height: 40px;
+    background-color:rgba(169, 169, 169, 0.801);
+    border-radius: 12px;
+    color: whitesmoke;
+    border: 2px outset lightgray;
+}
+
+#cancel:hover {
+    background-color:rgb(133, 133, 133);
+    color: white;
+    border: 2px outset black;
+}
+
+.error {
+    text-indent: 10px;
+    color: rgba(255, 0, 0, 0.61);
+}
+
+#anerror, #eaerror, #maerror, #luerror
+{
+    color: rgba(255, 166, 0, 0.61);
+}
+
+input[type=text]:focus {
+    border: 2px solid rgb(23, 153, 153);
+    outline: whitesmoke solid 1px;
+    box-shadow: none; 
+}
+
