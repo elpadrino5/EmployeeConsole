@@ -1,0 +1,12 @@
+AccountName,Name,Title,Department,Company,EmailAddress,OfficePhone,Mobile,MgrAcntName,Manager,Office,StreetAddress,PostalCode,Active,LastUpdate,LastEditedBy
+pmendez,"Pedro Mendez","Director, Marketing",Marketing,"Luna Fashion",pedro.mendez@luna.com,"(718) 658-5611","(718) 198-0000",cluna,"Cynthia Luna","New York","362 Roscoe Place Rd",84461,Yes,"07/31/2021 03:50:40 AM",elpadrino
+tadams,"Traci Adams","HR Manager","Human Resources","Luna Fashion",traci.adams@luna.com,"(773) 054-0095","(773) 188-9818",cluna,"Cynthia Luna",Chicago,"774 Kirkby Springs",35571,Yes,"07/31/2021 03:50:32 AM",elpadrino
+swhite,"Steven White","Senior Accountant",Finance,"Luna Fashion",steven.white@luna.com,"(773) 965-9154","(773) 598-0047",cluna,"Cynthia Luna","Los Angeles","600 Walnut Rise",20117,Yes,"07/31/2021 04:29:49 AM",elpadrino
+dmurphy,"Diane Murphy","Quality Control Supervisor","Quality Control","Luna Fashion",diane.murphy@luna.com,,"(213) 980-0006",cluna,"Cynthia Luna","Los Angeles","600 Walnut Rise",20117,Yes,"07/31/2021 03:50:49 AM",elpadrino
+ahenderson,"Arthur Henderson","BI analyst",Sales,Contractor,arthur.henderson@luna.com,,"(773) 987-5814",cluna,"Cynthia Luna",Chicago,"774 Kirkby Springs",35571,Yes,"07/31/2021 03:50:54 AM",elpadrino
+showard,"Shriley Howard","Shoe Designer",Design,"Luna Fashion",shriley.howard@luna.com,"(213) 111-3333","(213) 980-0006",cluna,"Cynthia Luna","Los Angeles","600 Walnut Rise",20117,Yes,"07/31/2021 04:28:55 AM",elpadrino
+jrodriguez,"Joe Rodriguez","Security Officer",Security,"Alert Security",joe.rodriguez@luna.com,"(213) 919-9936","(213) 731-1131",cluna,"Cynthia Luna","Los Angeles","600 Walnut Rise",20117,Yes,"07/31/2021 03:50:58 AM",elpadrino
+btaylor,"Betty Taylor","Shoe Designer",Design,"Luna Fashion",betty.taylor@luna.com,"(718) 654-1559","(718) 741-1185",cluna,"Cynthia Luna","New York","362 Roscoe Place Rd",84461,Yes,"07/31/2021 03:51:05 AM",elpadrino
+fwatson,"Fred Watson","Purchasing Coordinator",Material,"Luna Fashion",fred.watson@luna.com,,"(213) 647-8666",cluna,"Cynthia Luna","Los Angeles","600 Walnut Rise",20117,Yes,"07/31/2021 03:51:09 AM",elpadrino
+cluna,"Cynthia Luna",CEO,"Office of CEO","Luna Fashion",cynthia.luna@luna.com,"(773) 449-4011","(773) 240-1221",cluna,"Cynthia Luna",Chicago,"774 Kirkby Springs",35571,Yes,"07/31/2021 03:51:12 AM",elpadrino
+rjohnson,"Rebecca Hunter","Marketing Coordinatior",Marketing,"Luna Fashion",rebecca.johnson@luna.com,"(718) 584-6266","(718) 229-1873",pmendez,"Pedro Mendez","New York","362 Roscoe Place Rd",84461,Yes,"07/31/2021 04:30:24 AM",elpadrino
