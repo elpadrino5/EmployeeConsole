@@ -7,7 +7,6 @@
     //global variables
     $filename = 'data/UserInfo.csv'; //file that contains all user info and gets displayed in table format
     $fields_count = 16; //total amount of columns the file contains
-    $ad_security_group = "cn=employee_console,"; //user attempting to log in must be part of this group
     $suppress_log = 0; //set to 1 to disable priting logs to system
     $email_notification_address = "test@hotmail.com";    
     $uncommitted_updates_path = 'data/compare_values.log';
