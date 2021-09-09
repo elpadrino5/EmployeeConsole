@@ -1,4 +1,7 @@
 # Employee Info Admin Console
+### INDEX PAGE
+
+![image](https://user-images.githubusercontent.com/71573442/132611473-aae53d73-74e7-4036-bc5f-bf1aeeaf0c08.png)<br>
 
 ### SEARCHING <br>
 The search bar can be used to search for one or more employees that contain all or part of the search words in ANY of the fields including the ones that are not visible in the main table (must go to edit page to see): 'Email Address', 'Street Address', and 'Postal Code'. The resulting rows will be dynamically displayed (each row represents info of one employee) as input changes in the search bar. If there's no input on the search bar or if it's cleared then all rows will be displayed.<br>
